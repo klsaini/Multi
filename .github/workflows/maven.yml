@@ -43,9 +43,9 @@ jobs:
 
       - name: Jacoco Report to PR
         id: jacoco
-        uses: Madrapps/jacoco-report@main
+        uses: Madrapps/jacoco-report@v1.5
         with:
-            paths: ${{github.workspace}}/coverage-module/target/site/jacoco-aggregate/index.xml
+            paths: ${{github.workspace}}/coverage-module/target/site/jacoco-aggregate/index.html
             token: ${{secrets.GITHUB_TOKEN}}
             min-coverage-overall: 20
             min-coverage-changed-files: 20
