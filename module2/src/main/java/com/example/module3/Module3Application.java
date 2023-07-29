@@ -10,4 +10,9 @@ public class Module3Application {
         SpringApplication.run(Module3Application.class, args);
     }
 
+
+    private void add(){
+        System.out.println("abc");
+    }
+
 }
