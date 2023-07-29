@@ -39,14 +39,21 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jacoco-report
-          path: ${{ github.workspace }}/coverage-module/target/site/jacoco-aggregate/index.html
+          path: ${{github.workspace }}/coverage-module/target/site/jacoco-aggregate/index.html
 
       - name: Jacoco Report to PR
         id: jacoco
-        uses: madrapps/jacoco-report@v1.1
+        uses: Madrapps/jacoco-report@v1.5
         with:
-            path: ${{ github.workspace }}/coverage-module/target/site/jacoco-aggregate/index.html
-            token: ${{ secrets.GITHUB_TOKEN }}
+            path: ${{github.workspace }}/coverage-module/target/site/jacoco-aggregate/index.html
+            token: ${{secrets.GITHUB_TOKEN}}
+            min-coverage-overall: 20
+            min-coverage-changed-files: 20
+            title: ':lobster: Coverage Report'
+            update-comment: true
+            debug-mode: false
+            pass-emoji: ':green_circle:'
+            fail-emoji: ':red_circle:'
             
 
       - name: Get the Coverage info
