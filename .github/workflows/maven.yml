@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jacoco-report
-          path: target/site/jacoco-aggregate/index.html
+          path: ${{ github.workspace }}/target/site/jacoco-aggregate/index.html
 
       - name: Jacoco Report to PR
         id: jacoco
