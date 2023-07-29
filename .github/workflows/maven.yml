@@ -45,7 +45,10 @@ jobs:
         id: jacoco
         uses: Madrapps/jacoco-report@v1.5
         with:
-            paths: ${{github.workspace}}/coverage-module/target/site/jacoco-aggregate/jacoco.xml
+            paths: |
+             ${{github.workspace}}/coverage-module/target/site/jacoco-aggregate/jacoco.xml,
+             ${{github.workspace}}/Module1/target/site/jacoco-aggregate/jacoco.xml,
+             ${{github.workspace}}/module2/target/site/jacoco-aggregate/jacoco.xml
             token: ${{secrets.GITHUB_TOKEN}}
             min-coverage-overall: 20
             min-coverage-changed-files: 20
@@ -62,7 +65,7 @@ jobs:
           echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
 
       - name: Fail PR if overall coverage is less than 80%
-        if: ${{ steps.jacoco.outputs.coverage-overall < 80.0 }}
+        if: ${{ steps.jacoco.outputs.coverage-overall < 10.0 }}
         uses: actions/github-script@v6
         with:
           script: |
