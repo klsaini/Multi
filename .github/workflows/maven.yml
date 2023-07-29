@@ -15,7 +15,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v3.12.0
         with:
-          distribution: temurin
+          java-version: '11'
+          distribution: 'temurin'
           architecture: x64
           check-latest: true
           server-id: github
