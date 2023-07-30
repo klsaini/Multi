@@ -13,6 +13,7 @@ public class Module3Application {
 
     private void add(){
         System.out.println("abc");
+        System.out.println("abc");
     }
 
 }
