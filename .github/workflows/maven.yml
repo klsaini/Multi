@@ -31,6 +31,14 @@ jobs:
 
       - name: Build and test with Maven (manager)
         run: mvn -f module2/pom.xml clean test
+        
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: |
+           ${{github.workspace}}/Module1/target/surefire-reports/*.xml,
+           ${{github.workspace}}/module2/target/surefire-reports/*.xml
+        if: always()
 
       - name: Generate Jacoco Report (aggregate)
         run: mvn verify -DskipTests
@@ -70,11 +78,3 @@ jobs:
         with:
           script: |
               core.setFailed('Overall coverage is less than 80%!')
-    
-      - name: Test Summary
-        uses: test-summary/action@v2
-        with:
-          paths: |
-             ${{github.workspace}}/Module1/target/surefire-reports/*.txt,
-             ${{github.workspace}}/module2/target/surefire-reports/*.txt
-        if: always()
