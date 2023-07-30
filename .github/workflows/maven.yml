@@ -75,6 +75,6 @@ jobs:
         uses: test-summary/action@v2
         with:
           paths: |
-             ${{github.workspace}}/Module1/target/site/jacoco-aggregate/jacoco.xml,
-             ${{github.workspace}}/module2/target/site/jacoco-aggregate/jacoco.xml
+             ${{github.workspace}}/Module1/target/surefire-reports/*.txt,
+             ${{github.workspace}}/module2/target/surefire-reports/*.txt
           if: always()
