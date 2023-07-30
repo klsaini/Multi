@@ -74,5 +74,5 @@ jobs:
       - name: Display test results
         run: |
             echo "JUnit Test Results:"
-            cat {{github.workspace}}/Module1/target/site/jacoco-aggregate/surefire-reports/*.txt
-            cat {{github.workspace}}/module2/target/site/jacoco-aggregate/surefire-reports/*.txt
+            cat {{github.workspace}}/Module1/target/surefire-reports/*.txt
+            cat {{github.workspace}}/module2/target/surefire-reports/*.txt
