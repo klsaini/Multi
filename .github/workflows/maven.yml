@@ -77,4 +77,4 @@ jobs:
           paths: |
              ${{github.workspace}}/Module1/target/surefire-reports/*.txt,
              ${{github.workspace}}/module2/target/surefire-reports/*.txt
-          if: always()
+        if: always()
