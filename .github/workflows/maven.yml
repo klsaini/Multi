@@ -43,7 +43,7 @@ jobs:
 
       - name: Jacoco Report to PR
         id: jacoco
-        uses: Madrapps/jacoco-report@v1.5
+        uses: Madrapps/jacoco-report@v1.6.1
         with:
             paths: |
              ${{github.workspace}}/coverage-module/target/site/jacoco-aggregate/jacoco.xml,

@@ -12,14 +12,17 @@ public class Module1Application {
 
      private void add4(){
         System.out.println("abc");
+         System.out.println("abc");
     }
 
      private void add1(){
         System.out.println("abc");
+         System.out.println("abc");
     }
 
      private void add2(){
         System.out.println("abc");
+         System.out.println("abc");
     }
 
 }
